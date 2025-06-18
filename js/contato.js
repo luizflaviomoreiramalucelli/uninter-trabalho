@@ -43,30 +43,31 @@ document.addEventListener("DOMContentLoaded", () => {
             msg,
         };
 
-
         try {
-            // POST request para App Scripts do Google através de uma API minha
-            // na AWS. Com o App Scripts somente eu não consigo limitar o acesso
-            // de endereços web, mas no meu backend eu consigo.
-            const res = await fetch("http://3.137.221.99:3000/api/send-email", {
-                method: "POST",
-                headers: { "Content-Type": "application/json" },
-                body: JSON.stringify(data),
+            // POST request para App Scripts do Google. Dessa forma consigo
+            // receber o email mesmo sem backend
+            const res = await fetch("https://script.google.com/macros/s/AKfycbxLps-FzTm-0Z6wcn7ccwpL-sM9P7ki4PhqeZLSB-mk0KTYYZ1a6bc4GLiHkEcN6gQI_A/exec", {
+            method: "POST",
+            redirect: "follow",
+            headers: {
+                "Content-Type": "text/plain;charset=utf-8", // necessário para evitar CORS
+            },
+            body: new URLSearchParams(data).toString(),
             });
 
-            const json = await res.json();
+            const result = await res.json();
+
             if (result.status === "success") {
                 showAlert("Mensagem enviada com sucesso!");
                 form.reset();
             } else {
                 showAlert("Erro ao enviar. Tente novamente.");
             }
-        } catch (err) {
-            console.error(err);
+        } catch (error) {
+            console.error(error);
             // se error.message não for nulo será mostrado ao usuário
             showAlert(`Erro ao enviar. ${error.message || "Tente novamente mais tarde."}`);
         }
-
     });
 });
 
