@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Luiz Malucelli – Contato</title>
+    <!-- Links para google fonts Montserrat e para material icons do google-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
+    <!-- Colocando meu css depois do google para poder ajustar o tamanho dos icones com font-size -->
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <header>
+        <a href="../index.html"><h1 id="home">Luiz Malucelli</h1></a>
+    </header>
+    <nav>
+        <ul class="menu">
+            <li><a class="menu__item" href="./sobre.html">Sobre mim</a></li>
+            <li><a class="menu__item" href="./formacao.html">Formação</a></li>
+            <li><a class="menu__item" href="./portfolio.html">Portfolio</a></li>
+            <li><a class="menu__item" href="./contato.html">Contato</a></li>
+        </ul>
+    </nav>
+    <div class="menu-mobile__btn">
+        <!-- icone do google material icons -->
+        <span class="menu-mobile__btn-icon material-symbols-outlined">
+        menu
+        </span>
+    </div>
+    <div class="menu-mobile hidden">
+        <ul class="menu-mobile__list">
+            <li><a class="menu__item" href="./sobre.html">Sobre mim</a></li>
+            <li><a class="menu__item" href="./formacao.html">Formação</a></li>
+            <li><a class="menu__item" href="./portfolio.html">Portfolio</a></li>
+            <li><a class="menu__item" href="./contato.html">Contato</a></li>
+        </ul>
+        <!-- icone do google material icons -->
+        <span class="close-btn menu-mobile__close-btn material-symbols-outlined">
+         close
+        </span>
+    </div>
+    <div class="hero-section">
+        <div class="hero-section__image"></div>
+        <div class="hero-section__wrapper hero-section__content-wrapper">
+            <div class="hero-section__content-container">
+                <div class="hero-section__content">
+                    <h2 class="content__title">Luiz Flávio Moreira Malucelli</h2>
+                    <p class="thin">Desenvolvedor Full Stack e Mobile</p>
+                    <br>
+
+                    <h3 class="content__title">Entre em Contato</h3>
+                    <p class="thin">
+                    Se você deseja colaborar ou tem uma ideia de projeto, estou à disposição. Preencha o formulário abaixo e responderei assim que possível.
+                    </p>
+                
+                    <form class="contact-form" method="POST">
+                        <input type="text" placeholder="Nome" name="name" id="contact-form__name">
+                        <input type="text" placeholder="Email" name="email" id="contact-form__email">
+                        <textarea rows="5" placeholder="Mensagem" name="msg" id="contact-form__msg"></textarea>
+                        <button type="submit">Enviar</button>
+                    </form>
+
+                    <br>
+
+                    <h3 class="content__title">Outras formas de contato</h3>
+                    <div>
+                        <p class="thin"><span class="bold">Email:</span> info@jogoempatia.com</p>
+                        <p class="thin"><span class="bold">Whatsapp:</span> +55 41 99229-3040</p>
+                    </div>
+                    
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="alert-dialog hidden" id="alert-dialog-id">
+        <div class="alert-content">
+            <p id="alert-message"></p>
+            <button id="close-alert-btn">OK</button>
+        </div>
+    </div>
+</body>
+<script src="../js/menu.js"></script>
+<script src="../js/contato.js"></script>
+</html>
